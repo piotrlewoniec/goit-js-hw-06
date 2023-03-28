@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsBtn = {
     //Buttons bindings
@@ -14,16 +15,12 @@
   refsBtn.upBtn.addEventListener('click', counterUp);
 
   function counterDown() {
-    console.log(counterValue);
     counterValue--;
-    console.log(counterValue);
     counterObjDocument.counterValueDisplay.textContent = counterValue;
   }
 
   function counterUp() {
-    console.log(counterValue);
     counterValue++;
-    console.log(counterValue);
     counterObjDocument.counterValueDisplay.textContent = counterValue;
   }
 })();

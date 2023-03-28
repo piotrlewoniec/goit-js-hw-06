@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsForm = {
     //form bindings
@@ -8,13 +9,6 @@
   refsForm.form.addEventListener('submit', handleSubmit);
   function handleSubmit(event) {
     event.preventDefault();
-    console.log('Submiting...');
-    const {
-      elements: { email, password },
-    } = event.currentTarget;
-    console.log(event.currentTarget);
-    console.log(event.currentTarget.email.value);
-    console.log(event.currentTarget.password.value); //only for test
     if (event.currentTarget.email.value === '' || event.currentTarget.password.value === '') {
       return alert('Please fill in all the fields!');
     } else {
@@ -29,10 +23,6 @@
       event.currentTarget.reset();
     }
   }
-  //   refsForm.submitBtn.addEventListener('click', formValidation);
-  //   function formValidation() {
-  //     console.log('Submiting...');
-  //   }
 })();
 
 // Napisz skrypt zarządzania formularzem logowania.
@@ -52,3 +42,10 @@
 // Jeśli w formularzu są nieuzupełnione pola, wprowadź alert z upomnieniem o tym, że wszystkie pola powinny zostać wypełnione.
 // Jeśli użytkownik uzupełnił wszystkie pola i wysłał formularz, zbierz wartość pól jako obiekt, gdzie nazwa pola będzie nazwą właściwości, a wartość pola - wartością właściwości. Aby otrzymać dostęp do elementów formularza użyj właściwości elements.
 // Umieść obiekt z wprowadzonymi danymi do wiersza poleceń i wyczyść wartości pól formularza metodą reset.
+
+//Backup tests
+//   refsForm.submitBtn.addEventListener('click', formValidation);
+//   function formValidation() {
+//     console.log('Submiting...');
+//   }
+//const {elements: { email, password },} = event.currentTarget;

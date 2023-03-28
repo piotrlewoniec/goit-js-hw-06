@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsForm = {
     //form bindings

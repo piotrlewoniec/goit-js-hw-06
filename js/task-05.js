@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsForm = {
     //form bindings
@@ -9,7 +10,6 @@
   refsForm.nameInput.addEventListener('input', spanInputDisplay);
 
   function spanInputDisplay() {
-    console.log('Inputing...');
     refsForm.nameDisplay.textContent = refsForm.nameInput.value;
     if (refsForm.nameInput.value === '') {
       refsForm.nameDisplay.textContent = 'Anonymous';

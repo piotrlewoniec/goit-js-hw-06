@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const objCreation = {
     //Buttons bindings
@@ -15,11 +16,6 @@
     },
     //button event handlers
     init: function () {
-      // this.createBtn.addEventListener('click', this.createBoxesEventHandler);
-      // this.createBtn.addEventListener('click', () => {
-      //   console.log('calling creator...');
-      //   this.createBoxes(+document.querySelector('#controls')['children'][0].value);
-      // });
       this.createBtn.addEventListener(
         'click',
         function () {
@@ -27,7 +23,6 @@
           this.createBoxes(+document.querySelector('#controls')['children'][0].value);
         }.bind(this)
       );
-      //this.delBtn.addEventListener('click', this.destroyBoxesEventHandler);
       this.delBtn.addEventListener(
         'click',
         function () {
@@ -36,28 +31,11 @@
         }.bind(this)
       );
     },
-    // createBoxesEventHandler: function () {
-    //   console.log('calling creator...');
-    //   objCreation.createBoxes(+document.querySelector('#controls')['children'][0].value);
-    // },
-    // destroyBoxesEventHandler: function () {
-    //   console.log('destroing...');
-    //   objCreation.areaForObj.insertAdjacentHTML('afterbegin', ' '); //not working
-    // console.log('destroing...' + objCreation.areaForObj.childElementCount);
-    //   if (objCreation.areaForObj.hasChildNodes()) {
-    //     objCreation.areaForObj.replaceChildren();
-    //   } else {
-    //     console.log('There is nothing left...');
-    //   }
-    // },
     createBoxes: function (amount) {
       if (amount === 0) {
-        //this.destroyBoxesEventHandler();
         this.destroyBoxes();
       } else if (!this.areaForObj.hasChildNodes()) {
         console.log('creating...' + amount);
-        //this.areaForObj.insertAdjacentHTML('beforeend', '<div></div>');
-        //this.areaForObj.insertAdjacentHTML('beforeend','<div style="width:30px; height: 30px background-color:red;"></div>');
         let creationDivs = []; //array of divs with html code
         let width = this.divWidth;
         let heigh = this.divHeight;
@@ -77,8 +55,6 @@
         this.areaForObj.style.justifyContent = 'center';
         this.areaForObj.style.gap = '10px';
         this.areaForObj.style.alignItems = 'center';
-        //  refsForm.textOutput.style.fontSize = +refsForm.barInput.value + 'px';
-        // Wszystkie elementy powinny mieć losowy kolor tła w formacie NEX. Użyj gotowej funkcji getRandomHexColor aby otrzymać kolor.
       } else {
         console.log('Destroy before creat!');
       }
@@ -97,18 +73,7 @@
       }
     },
   };
-
-  console.log('Obj init');
   objCreation.init();
-  console.log('createBtn ' + objCreation.createBtn);
-  console.log('delBtn ' + objCreation.delBtn);
-  console.log('amount ' + objCreation.amount);
-  console.log('areaForObj ' + objCreation.areaForObj);
-  //console.log('function createBoxes body ' + objCreation.createBoxesEventHandler);
-  //objCreation.createBoxesEventHandler();
-  //console.log('function destroyBoxes body ' + objCreation.destroyBoxesEventHandler);
-  //objCreation.destroyBoxesEventHandler();
-  console.log(objCreation.getRandomHexColor());
 })();
 
 // Zadanie 10 (nieobowiązkowe)

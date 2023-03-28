@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsForm = {
     //form bindings
@@ -7,7 +8,6 @@
   //Event handler
   refsForm.barInput.addEventListener('input', inputFontSizeChange);
   function inputFontSizeChange() {
-    console.log('Changing font size');
     refsForm.textOutput.style.fontSize = +refsForm.barInput.value + 'px';
   }
 })();

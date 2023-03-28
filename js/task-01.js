@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   let categoryCount = document.querySelectorAll('.item');
   let categoryStats = document.querySelectorAll('#categories');

@@ -1,3 +1,4 @@
+'use strict';
 (() => {
   const refsPage = {
     //page bindings
@@ -8,7 +9,6 @@
 
   refsPage.btnPage.addEventListener('click', bodyBackGroundColorChange);
   function bodyBackGroundColorChange() {
-    console.log('Current body background color: ' + refsPage.bodyPage.style.backgroundColor);
     let newBackgroundColor = getRandomHexColor();
     refsPage.spanPage.textContent = newBackgroundColor;
     refsPage.bodyPage.style.backgroundColor = newBackgroundColor;
